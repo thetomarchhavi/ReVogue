@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Select Clothes for Comparison - Cloth Portal</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+</head>
+
+<style>
+    /* Style the "Select Clothes for Comparison" page */
+body {
+    font-family: Arial, sans-serif;
+    background: #f2f2f2; /* Change to your desired background color or image */
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.compare-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    text-align: left;
+}
+
+.select-dropdown {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.compare-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #ff5733; /* Change to your desired button color */
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.compare-button:hover {
+    background: #ff6f3c; /* Change to your desired hover button color */
+}
+
+</style>
+
+<body>
+    <h1>Select Clothes for Comparison</h1>
+    <form action='/compare/'method="post">
+        {% csrf_token %}
+        <label for="cloth1">Select Cloth 1:</label>
+        <select name="cloth1" id="cloth1" required>
+            <option value="">Select a Cloth</option>
+            {% for cloth in clothes %}
+                <option value="{{ cloth.id }}">{{ cloth.brand_name }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="cloth2">Select Cloth 2:</label>
+        <select name="cloth2" id="cloth2" required>
+            <option value="">Select a Cloth</option>
+            {% for cloth in clothes %}
+                <option value="{{ cloth.id }}">{{ cloth.brand_name }}</option>
+            {% endfor %}
+        </select>
+
+        <button type="submit">Compare</button>
+    </form>
+</body>
+</html>

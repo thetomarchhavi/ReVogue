@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Cloth Portal</title>
+    {% comment %} <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file --> {% endcomment %}
+</head>
+
+<style>
+    /* Style the signup form */
+.signup-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.signup-form h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.signup-form input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.signup-form button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #ff5733; /* Change to your desired button color */
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.signup-form button:hover {
+    background: #ff6f3c; /* Change to your desired hover button color */
+}
+
+</style>
+
+<body>
+    <form action="/signup/" method="post" class="signup-form">
+        {% csrf_token %}
+        <h1>Sign Up</h1>
+        <input type="text" name="username" placeholder="Username" required/>
+        <input type="email" name="email" placeholder="Email" required/>
+        <input type="text" name="name" placeholder="Full Name" required/>
+        <input type="password" name="password" placeholder="Password" required/>
+        <input type="text" name="most_bought_brand" placeholder="Most Bought Clothing Brand" required/>
+        <input type="text" name="most_bought_genre" placeholder="Most Bought Clothing Genre" required/>
+        <input type="text" name="most_bought_colour" placeholder="Most Bought Cloth Colour" required/>
+        <input type="text" name="most_visited_website" placeholder="Most Visited Clothing Website" required/>
+        <button type="submit">Sign Up</button>
+    </form>
+</body>
+</html>

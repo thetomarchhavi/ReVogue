@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>List of Clothes - Cloth Portal</title>
+    {% comment %} <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file --> {% endcomment %}
+</head>
+
+<style>
+    /* Style the "List of Clothes" page */
+body {
+    font-family: Arial, sans-serif;
+    background: #f2f2f2; /* Change to your desired background color or image */
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.clothes-list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.cloth-item {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+</style>
+
+<body>
+    <h1>List of Clothes</h1>
+    <ul class="clothes-list">
+        {% for cloth in clothes %}
+            <li class="cloth-item">{{ cloth.brand_name }} - {{ cloth.description }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

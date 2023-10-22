@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Cloth - Cloth Portal</title>
+</head>
+
+<style>
+    /* Style the "Create Cloth" form */
+.create-cloth-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.create-cloth-form h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.create-cloth-form p {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.create-cloth-form input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.create-cloth-form button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #ff5733; /* Change to your desired button color */
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.create-cloth-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #4CAF50; /* Change to your desired button color */
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.create-cloth-form button:hover {
+    background: #ff6f3c; /* Change to your desired hover button color */
+}
+</style>
+
+<body>
+    <p>Your Name: {{username}}</p>
+    <form action="/create/" method="post" class="create-cloth-form" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h1>Create Cloth</h1>
+        <input type="text" name="brand_name" placeholder="Brand Name" required/>
+        <input type="text" name="description" placeholder="Cloth Description" required/>
+        <input type="text" name="genre" placeholder="Cloth Genre" required/>
+        <input type="text" name="colour" placeholder="Cloth Colour" required/>
+        <input type="text" name="keywords" placeholder="Keywords" required/>
+        <input type="file" name="image" placeholder="Cloth Image" required/>
+        <button type="submit">Create Cloth</button>
+        
+    </form>
+
+    <!-- Add buttons with links to /compare and /list -->
+    <a href="/select-clothes/" class="create-cloth-button">Compare Clothes</a>
+    <a href="/list" class="create-cloth-button">List of Clothes</a>
+
+</body>
+</html>

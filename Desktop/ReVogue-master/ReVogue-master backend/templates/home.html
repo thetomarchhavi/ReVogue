@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Cloth Portal</title>
+    {% comment %} <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file --> {% endcomment %}
+</head>
+
+<style>
+    /* Reset default margin and padding for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Apply a background image or color */
+body {
+    background: url('your-background-image.jpg') center/cover no-repeat; /* Replace 'your-background-image.jpg' with your image path or use a background color */
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+/* Style the header */
+header {
+    background: #fff;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Style the navigation menu */
+nav ul {
+    list-style: none;
+    background: #333;
+    text-align: center;
+    padding: 10px;
+}
+
+nav li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ff5733; /* Change to your desired hover color */
+}
+
+/* Style the main content */
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+/* Style buttons */
+a {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #ff5733; /* Change to your desired button color */
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+a:hover {
+    background: #ff6f3c; /* Change to your desired hover button color */
+}
+
+/* Style the footer */
+footer {
+    background: #333;
+    text-align: center;
+    color: #fff;
+    padding: 10px;
+}
+
+/* Add more styles for different sections of your website as needed */
+
+</style>
+
+<body>
+    <header>
+        <h1>Welcome to Cloth Portal</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/">Shop</a></li>
+            <li><a href="/">About Us</a></li>
+            <li><a href="/">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section>
+            <h2>About Us</h2>
+            <p>
+                Welcome to our clothing portal. We are dedicated to providing stylish and high-quality clothing for all occasions. 
+                Our platform helps you explore the latest fashion trends and shop for your favorite styles.
+            </p>
+        </section>
+
+        <section>
+            <h2>Log In or Sign Up</h2>
+            <p>
+                To access your account or create a new one, please log in or sign up:
+            </p>
+            <a href="/login" class="login-button">Log In</a>
+            <a href="/signup" class="signup-button">Sign Up</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Cloth Portal. All rights reserved.</p>
+    </footer>
+</body>
+</html>

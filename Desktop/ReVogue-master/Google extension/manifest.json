@@ -1,0 +1,32 @@
+{
+    "manifest_version": 3,
+    "name": "Myntra Shopping Tracker",
+    "version": "1.0",
+    "description": "Track your shopping habits on Myntra.",
+    "permissions": [
+      "storage",
+      "activeTab",
+      "webNavigation",
+      "webRequest",
+      "webRequestBlocking",
+      "https://*.myntra.com/*"
+    ],
+    "content_scripts": [
+      {
+        "matches": ["https://*.myntra.com/*"],
+        "js": ["content.js"]
+      }
+    ],
+   
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        
+        "128": "Footer logo.png"
+      }
+    },
+    "icons": {
+      "128": "Footer logo.png"
+    }
+  }
+  
